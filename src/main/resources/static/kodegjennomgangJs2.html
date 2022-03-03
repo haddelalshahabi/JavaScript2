@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Kodegjennomgang JavaScript 2</title>
+    <script type="application/javascript">
+        //1.Legg til flere personer i personregisteret.
+        const person ={
+            navn : "Line Hasan",
+            adresse : "Askerveien"
+        };
+
+        const etArray = [];
+        etArray.push(1);
+        etArray.push("Hei");
+        etArray.push(person);
+
+        console.log(etArray[0]);
+        console.log(etArray[1]);
+        console.log(etArray[2]);
+
+        const liste = [1,3,5,2,7,-9];
+        liste[0] = 10;
+
+        for (let i = 0; i < liste.length; i ++){
+            console.log(liste[i]);
+        }
+
+        for (let i of liste){
+            console.log(i);
+        }
+
+        //setter inn heltallet 23 på neste ledige plass
+        liste.push(23);
+
+        //gir lengden på arrayet
+        lengde = liste.length;
+
+        //sletter to verdier i arrayet fra og med plass 1
+        liste.splice(1,2);
+
+        //gir posisjon i arrayet hvor verdien er 23 (4)
+        let posisjon = liste.indexOf(23);
+        console.log(posisjon);
+
+        //sorterer et array leksiografisk
+        liste.sort();
+        console.log();
+
+        //sorteterer et heltallsarray i stigende rekkefølge
+        //(med egendefinert sammenligingsfunksjon for sorteringen)
+        liste.sort(function (a,b) {return a-b;});
+        //liste.sort((a,b) => a-b)
+        console.log(liste);
+
+        let kundene = [];
+        const kunde1 = {
+            navn : "Per Husin",
+            adresse: "Osloveien82"
+        };
+        kundene[0] = kunde1;
+
+        const kunde2 = {
+            navn: "Line Johan",
+            adresse: "Askerveien 84"
+        };
+        kundene.push(kunde2);
+
+        for (let i = 0; i < kundene.length; i ++){
+            console.log(kundene[i].navn + " " + kundene[i].adresse);
+        }
+
+        for (let k of kundene){
+            console.log(k.navn + " " + k.adresse);
+        }
+
+        //dette gir en feil - her blir k nøkkelen, som i dette tilfellet er indeksen til k unde-objektet
+        for (let k in kundene){
+            console.log(k.navn + " " + k.adresse);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

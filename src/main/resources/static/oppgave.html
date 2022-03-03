@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Ukeoppgave JavaScript 2</title>
+    <script type="application/javascript">
+        function visPersonRegister(){
+            //her definerer vi array
+            const personRegister=[];
+            const person1 = {
+                navn : "Line Jensen",
+                adresse : "Askerveien 82",
+                telefonnr : "12334455"
+            };
+            personRegister.push(person1);
+
+            const person2 = {
+                navn : "Ole Hansen",
+                adresse : "Osloveien 82",
+                telefonnr : "99887766"
+            };
+            personRegister.push(person2);
+
+
+            //skriver de ut
+            let ut = "<table><tr>" +
+                "<th>Navn</th><th>Adresse</th><th>Telefonnr</th>" +
+                "</tr>";
+
+            //Hvorfor burker vi of i for-løkke men ikke vanlig
+            for (let p of personRegister){
+                //tr- tabbelsrad, td-tabbelsinnehold
+                    ut+="<tr>";
+                    ut+="<td>" + p.navn + "</td> <td>" + p.adresse + "</td> <td>"
+                        + p.telefonnr +"</td>";
+
+                    ut+="</tr>";
+                }
+            //getElementById
+            document.getElementById("personRegister").innerHTML=ut;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="visPersonRegister()"> Vis personregister </button>
+    <div id="personRegister"></div>
+</body>
+</html>
